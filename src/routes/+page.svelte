@@ -10,8 +10,9 @@
 	});
 </script>
 
-<div>
-	<div class="flex flex-col w-full px-12 py-8">
-		<p>Ini Splash SCreen</p>
+<div class="bg-primary/25s h-full">
+	<div class="flex flex-col justify-center items-center  h-full w-full px-12 py-8">
+		<img src="icon.png" alt="">
+		<span class="loading loading-dots loading-md"></span>
 	</div>
 </div>

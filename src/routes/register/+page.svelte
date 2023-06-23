@@ -41,9 +41,9 @@
 			/>
 		</div>
 		<div class="flex gap-2">
-			<p>Belum Punya akun?</p>
-			<a class="font-bold" href="/register">Daftar</a>
+			<p>Sudah punya akun?</p>
+			<a class="font-bold" href="/login">login</a>
 		</div>
-		<button class="btn btn-neutral">Login</button>
+		<button class="btn btn-neutral">Register</button>
 	</form>
 </div>

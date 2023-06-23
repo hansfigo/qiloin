@@ -1,22 +1,6 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import MyFooter from '../../../components/MyFooter.svelte';
-
-	const username = 'Miku';
-
-	onMount(() => {
-		const getUser = async () => {
-			const req = await fetch('http://127.0.0.1:8080/v1/user', {
-				method: 'GET'
-			});
-
-			const data = await req.json();
-
-			console.log(data);
-		};
-
-		getUser();
-	});
+	export let data;
+	const username = data.data.Name;
 
 	const service = [
 		{
@@ -26,6 +10,7 @@
 			name: 'Setrika'
 		}
 	];
+
 </script>
 
 <div>

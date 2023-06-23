@@ -1,12 +1,10 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
-	import { onMount } from 'svelte';
-
 </script>
 
-<div class="flex flex-col w-full px-12 py-8">
+<div class="flex flex-col justify-center items-center w-full px-12 py-8">
+    <img src="icon.png" class="w-52" alt="">
 	<form method="POST" class="flex flex-col gap-8" action="">
-		<h1 class="text-2xl font-bold">Login</h1>
+        <h1 class="text-2xl font-bold">Login</h1>
 		<div>
 			<p>Email</p>
 			<input
