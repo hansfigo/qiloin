@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		const timeout = 3000;
+		const timeout = 1000;
 		setTimeout(() => {
 			goto('/login');
 		}, timeout);
