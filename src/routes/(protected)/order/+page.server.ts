@@ -1,4 +1,4 @@
-import { redirect } from "@sveltejs/kit";
+import { redirect, type Actions } from "@sveltejs/kit";
 import { cookieData, getUserdata } from "../../../store/test";
 import { get } from "svelte/store";
 
@@ -14,11 +14,13 @@ export async function load() {
 }
 
 /** @type {import('./$types').Actions} */
-export const actions = {
+export const actions : Actions = {
     default: async ({ request, cookies }) => {
 
-
         const data = await getUserdata()
+
+        console.log(data.data);
+        
         const cookie = get(cookieData)
 
         const response = await fetch('http://127.0.0.1:8080/v1/order', {
@@ -43,5 +45,5 @@ export const actions = {
 
         throw redirect(303, '/home');
 
-    }
+    },
 };

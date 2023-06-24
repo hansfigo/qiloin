@@ -4,7 +4,7 @@
 		<div>
 			<p>Adress</p>
 			<input
-				name="adress"
+				name="address"
 				type="text"
 				placeholder="Type here"
 				class="input input-bordered w-full max-w-xs"
