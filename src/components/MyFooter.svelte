@@ -1,18 +1,33 @@
 <script lang="ts">
-	import { goto } from "$app/navigation";
+	import { goto } from '$app/navigation';
+	import { get } from 'svelte/store';
+	import { pageLoc } from '../store/test';
 
 	const menu = ['Home', 'History', 'Profile'];
 
+	const handleNavigation = (route: string) => {
+		goto(`/${route.toLocaleLowerCase()}`);
+	};
 
-    const handleNavigation = (route : string)=>{
-        goto(`/${route.toLocaleLowerCase()}`)
-    }
+	let loc = ''
+
+	pageLoc.subscribe((e)=>{
+		loc = e
+	})
+
+	console.log(loc);
+	
 </script>
 
-<div class="fixed bottom-0 px-6 h-16 border-2 flex justify-between w-full bg-white md:max-w-[500px] md:w-[500px]">
+<div
+	class="fixed bottom-0 px-6 h-16 border-2 flex justify-between w-full bg-white md:max-w-[500px] md:w-[500px]"
+>
 	{#each menu as e}
 		<div class="w-full flex justify-center">
-			<button on:click={()=> handleNavigation(e)} class="flex flex-col justify-center items-center">
+			<button
+				on:click={() => handleNavigation(e)}
+				class={`flex ${loc === e ? 'text-primary' : ''} flex-col justify-center items-center`}
+			>
 				{#if e === 'Home'}
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

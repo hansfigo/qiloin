@@ -1,16 +1,23 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+	import { pageLoc } from '../../../store/test.js';
+
+	pageLoc.set('Home')
+
 	export let data;
 	const username = data.data.Name;
 
 	const service = [
 		{
-			name: 'Cuci'
+			name: 'Cuci',
+			img : 'washing.svg'
 		},
 		{
-			name: 'Setrika'
+			name: 'Setrika',
+			img : 'washing.svg'
 		}
 	];
-
+	
 </script>
 
 <div>
@@ -39,7 +46,7 @@
 	{#each service as serv}
 		<div class="card card-compact w-96 bg-base-100 shadow-lg">
 			<figure>
-				<img src="https://placehold.it/200x140" alt="Shoes" />
+				<img src={serv.img} class="h-24 w-24" alt="Shoes" />
 			</figure>
 			<div class="card-body">
 				<h2 class="card-title">{serv.name}</h2>
@@ -63,5 +70,5 @@
 </section>
 
 <section class="flex w-full">
-	<button class="btn  w-full btn-primary text-xl text-white font-bold">Jemput ke rumah</button>
+	<button on:click={()=> goto('/order')} class="btn  w-full btn-primary text-xl text-white font-bold">Jemput ke rumah</button>
 </section>
